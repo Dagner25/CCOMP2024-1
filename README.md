@@ -1,3 +1,3 @@
 # CCOMP2024-1
 
-Repositorio de Alumno Dagner Lupacca :)
+Repositorio de Alumno Dagner Lupacca 😎

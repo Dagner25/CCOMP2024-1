@@ -9,33 +9,25 @@ caracteres de una cadena.
 
 #include <iostream>
 #include <string>
-#include <cctype> // Para usar la función std::isalnum
+#include <cctype> 
 
 bool testPalindrome(const std::string& str, int start, int end) {
-    // Caso base: si el índice de inicio supera al de fin, la cadena es un palíndromo
     if (start >= end) {
         return true;
     }
-    
-    // Ignoramos los signos de puntuación y los espacios
     while (!std::isalnum(str[start])) {
         start++;
     }
     while (!std::isalnum(str[end])) {
         end--;
     }
-    
-    // Si los caracteres en los índices start y end son diferentes, no es un palíndromo
     if (std::tolower(str[start]) != std::tolower(str[end])) {
         return false;
     }
-    
-    // Llamada recursiva con los índices ajustados
     return testPalindrome(str, start + 1, end - 1);
 }
 
 bool isPalindrome(const std::string& str) {
-    // Llamada inicial a la función recursiva
     return testPalindrome(str, 0, str.length() - 1);
 }
 
